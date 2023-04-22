@@ -1,0 +1,24 @@
+prerender:
+  raster_size: 512
+  scale: 3
+  roadgraph_distillation_rate: 5
+  center_x: 256
+  center_y: 256
+model:
+  backbone: resnet34
+  n_modes: 3
+  n_timestamps: 80
+  predict_covariances: true
+training:
+  num_epochs: 60
+  eval_every: 10000
+  optimizer:
+    lr: 0.0003
+  train_dataloader:
+    num_workers: 8
+    batch_size: 16
+    shuffle: true
+  val_dataloader:
+    num_workers: 8
+    batch_size: 16
+    shuffle: false
